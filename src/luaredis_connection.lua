@@ -10,6 +10,7 @@ local metacommands = {}
 metacommands.__index = function(table, key)
   if not commands[key] then
     local cmd = function(...)
+      local arg = {...}
       local cmd_text = key
       for _,v in ipairs(arg) do
         cmd_text = cmd_text .. " " .. v
